@@ -1,47 +1,20 @@
 import React from 'react'
 import {View, Text, StyleSheet, ScrollView} from 'react-native'
 
+import Flatlist from '../components/Flatlist'
 import CardVacina from '../components/CardVacinaComponent'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 function Home(){
     return(
-        <ScrollView style = {styles.container}>
-            <CardVacina 
-                title={'BCG'} 
-                dosagem={'Dose única'}
-                date={'11/06/2022'}
-                imageUrl={'../images/vacina1.png'}
-                dateNextDose={'11/10/2023'}
-            />
-            <CardVacina 
-            title={'BCG'} 
-            dosagem={'Dose única'}
-            date={'11/06/2022'}
-            imageUrl={'../images/vacina1.png'}
-            dateNextDose={'11/10/2023'}
-            />
-            <CardVacina 
-            title={'BCG'} 
-            dosagem={'Dose única'}
-            date={'11/06/2022'}
-            imageUrl={'../images/vacina1.png'}
-            dateNextDose={'11/10/2023'}
-            />
-            <CardVacina 
-                title={'BCG'} 
-                dosagem={'Dose única'}
-                date={'11/06/2022'}
-                imageUrl={'../images/vacina1.png'}
-                dateNextDose={'11/10/2023'}
-            />
-            <CardVacina 
-                title={'BCG'} 
-                dosagem={'Dose única'}
-                date={'11/06/2022'}
-                imageUrl={'../images/vacina1.png'}
-                dateNextDose={'11/10/2023'}
-            />
-        </ScrollView>
+        <View style = {styles.container}>
+            <View style = {styles.flatListArea}>
+                <Flatlist/>
+            </View>
+            <TouchableOpacity>
+                <Text>Nova Vacina</Text>
+            </TouchableOpacity>
+        </View>
     )
 }
 
@@ -49,19 +22,13 @@ const styles = StyleSheet.create({
     container:{
         height: "100%",
         width: "100%",
+        display: 'flex',
+        alignItems: 'center',
         backgroundColor: "#add4d0"
     },
-    containerCardVacina:{
-        width:"45%",
-        height:130,
-        display:'flex',
-        alignItems:'center',
-        borderRadius:10,
-        
-        
-        backgroundColor:"#FFF"
+    flatListArea:{
+        height: "50%"
     }
-
 });
 
 export default Home;

@@ -1,11 +1,14 @@
 import React from "react"
-import {StyleSheet, Image, Text, View} from 'react-native'
-import { TouchableOpacity } from "react-native-gesture-handler";
+import {StyleSheet, Image, Text, View, TouchableOpacity} from 'react-native'
+//import { TouchableOpacity } from "react-native-gesture-handler";
 
 function CardVacinaComponent(props){
     var imagemSrc = props.imageUrl
     return(
-        <TouchableOpacity style = {styles.containerCardVacina}>
+        <TouchableOpacity 
+            style = {styles.containerCardVacina}
+            onPress = {teste}>
+
             <Text style = {styles.titleText}>
                 {props.title}
             </Text>
@@ -26,10 +29,14 @@ function CardVacinaComponent(props){
         </TouchableOpacity>)
 }
 
+function teste(){
+    alert("teste");
+}
+
 const styles = StyleSheet.create({
     containerCardVacina:{
         marginTop:10,
-        width:"45%",
+        width:"48%",
         height:140,
         display:'flex',
         alignItems:'center',
@@ -62,7 +69,7 @@ const styles = StyleSheet.create({
         height:65
     },
     imageVacina:{
-        width: "100%",
+        width: "90%",
         height: "100%"
     },
     containerProximaVacina:{

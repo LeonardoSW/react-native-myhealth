@@ -100,18 +100,6 @@ function SignIn({navigation}){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 const styles = StyleSheet.create(
     {
         container:{

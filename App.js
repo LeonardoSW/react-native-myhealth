@@ -6,6 +6,9 @@ import Login from '../projeto.react/src/screens/Login';
 import Recovery from '../projeto.react/src/screens/Recovery';
 import SignIn from '../projeto.react/src/screens/SignIn';
 
+import Menu from '../projeto.react/src/screens/Menu'
+import Home from '../projeto.react/src/screens/Home'
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
@@ -36,6 +39,10 @@ export default function App() {
           options={{
             drawerItemStyle: {display:'none'}
         }}/>
+        <Drawer.Screen
+          name='Menu'
+          component={Menu}
+          />
       </Drawer.Navigator>
     </NavigationContainer>
   );

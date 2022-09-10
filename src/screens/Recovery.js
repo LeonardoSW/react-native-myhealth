@@ -35,7 +35,6 @@ function Recovery({navigation}){
     function RecuperarSenha(){
         if(email == ""){
             alert("Campo email não pode ser vazio!");
-            navigation.goBack();
             return null;
         }
 

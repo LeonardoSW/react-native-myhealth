@@ -79,6 +79,7 @@ function Login({navigation}){
               .then( () => {
                 alert('Usuario logado com sucesso!');
                 onChangeUser(true);
+                navigation.navigate('Menu');
               })
               .catch(error => {
                 console.log(error);

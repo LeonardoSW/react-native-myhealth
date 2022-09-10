@@ -2,7 +2,9 @@ import React from "react"
 import {StyleSheet, Text, TextInput , View, TouchableOpacity, Image, ImageBackground} from 'react-native'
 import auth from '@react-native-firebase/auth';
 
-function Login(){
+
+
+function Login({navigation}){
     const [email, onChangeEmail] = React.useState("");
     const [senha, onChangePass] = React.useState("");
     const [usuarioValido, onChangeUser] = React.useState(true);
@@ -52,12 +54,14 @@ function Login(){
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    style={styles.buttonCC}>
+                    style={styles.buttonCC}
+                    onPress= {() => navigation.navigate('Sigin')}>
                     <Text style = {styles.buttonText}>Criar minha conta</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    style={styles.buttonES}>
+                    style={styles.buttonES}
+                    onPress = {() => navigation.navigate('Recovery')}>
                     <Text style = {styles.buttonText}>Esqueci minha senha</Text>
                 </TouchableOpacity>
             </View>

@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -6,12 +7,19 @@ import Recovery from '../projeto.react/src/screens/Recovery';
 import SignIn from '../projeto.react/src/screens/SignIn';
 
 import { NavigationContainer } from '@react-navigation/native';
-//import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-      <Login/>
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Login">
+        <Drawer.Screen name='Login' component={Login}/>
+        <Drawer.Screen name='Sigin' component={SignIn}/>
+        <Drawer.Screen name='Recovery' component={Recovery}/>
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
 

@@ -6,7 +6,7 @@ import auth from '@react-native-firebase/auth';
 
 const textoCabecalho = "MyHealth";
 
-function Recovery(){
+function Recovery({navigation}){
     
     const [email, onChangeEmail] = React.useState("");
 
@@ -35,6 +35,7 @@ function Recovery(){
     function RecuperarSenha(){
         if(email == ""){
             alert("Campo email não pode ser vazio!");
+            navigation.goBack();
             return null;
         }
 
@@ -48,6 +49,8 @@ function Recovery(){
                 
                 console.log(error);
               });
+
+        navigation.goBack();
     }
 }
 

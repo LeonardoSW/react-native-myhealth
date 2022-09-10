@@ -8,7 +8,7 @@ import CabecalhoComponent from '../components/CabecalhoComponent';
 
 const textoCabecalho = "MyHealth";
 
-function SignIn(){
+function SignIn({navigation}){
 
     const [email, onChangeEmail] = React.useState("");
     const [senha, onChangePass] = React.useState("");
@@ -93,6 +93,8 @@ function SignIn(){
                 else
                     console.log(error);
             })
+
+        navigation.goBack();
     }
 
 }

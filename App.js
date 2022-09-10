@@ -14,10 +14,28 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Login">
-        <Drawer.Screen name='Login' component={Login}/>
-        <Drawer.Screen name='Sigin' component={SignIn}/>
-        <Drawer.Screen name='Recovery' component={Recovery}/>
+      <Drawer.Navigator 
+        initialRouteName="Login"
+        screenOptions={{headerShown: false}}
+      >
+        <Drawer.Screen 
+          name='Login' 
+          component={Login}
+          options={{
+            drawerItemStyle: {display:'none'}
+        }}/>
+        <Drawer.Screen 
+          name='Sigin' 
+          component={SignIn}
+          options={{
+            drawerItemStyle: {display:'none'}
+        }}/>
+        <Drawer.Screen 
+          name='Recovery' 
+          component={Recovery}
+          options={{
+            drawerItemStyle: {display:'none'}
+        }}/>
       </Drawer.Navigator>
     </NavigationContainer>
   );

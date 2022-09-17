@@ -1,5 +1,6 @@
 import Login from '../screens/Login'
 import Home from '../screens/Home'
+import NovaVacina from '../screens/NovaVacina'
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -16,10 +17,20 @@ export default function Menu() {
           <Drawer.Screen
             name='Minhas Vacinas'
             component={Home}
+            options={
+              {
+                headerTintColor:'#419ED7', 
+                headerStyle: {backgroundColor:'#C1E7E3', height:50}
+              }}
             />
           <Drawer.Screen 
-            name='Login' 
-            component={Login}/>
+            name='NovaVacina' 
+            component={NovaVacina}
+            options={
+              {
+                headerTintColor:'#419ED7', 
+                headerStyle: {backgroundColor:'#C1E7E3', height:50}
+              }}/>
         </Drawer.Navigator>
       </NavigationContainer>
     );

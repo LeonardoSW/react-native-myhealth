@@ -3,73 +3,10 @@ import {View, Text, FlatList, StyleSheet} from 'react-native'
 
 import CardVacina from '../components/CardVacinaComponent'
 
-const produtos = [
-    {
-        id: "1",
-        title:"BCC",
-        dosagem: "Dose única",
-        date: "16/03/2022",
-        dateNextDose: "16/02/2023"
-    },
-    {
-        id: "2",
-        title:"BCG",
-        dosagem: "1ª dose",
-        date: "16/03/2022",
-        dateNextDose: "16/02/2023"
-    },
-    {
-        id: "3",
-        title:"ABC",
-        dosagem: "2ª dose",
-        date: "16/03/2022",
-        dateNextDose: "16/02/2023"
-    },
-    {
-        id: "4",
-        title:"ABC",
-        dosagem: "2ª dose",
-        date: "16/03/2022",
-        dateNextDose: "16/02/2023"
-    },
-    {
-        id: "5",
-        title:"ABC",
-        dosagem: "2ª dose",
-        date: "16/03/2022",
-        dateNextDose: "16/02/2023"
-    },
-    {
-        id: "6",
-        title:"ABC",
-        dosagem: "2ª dose",
-        date: "16/03/2022",
-        dateNextDose: "16/02/2023"
-    },
-    {
-        id: "7",
-        title:"ABC",
-        dosagem: "2ª dose",
-        date: "16/03/2022",
-        dateNextDose: "16/02/2023"
-    },
-    {
-        id: "8",
-        title:"ABC",
-        dosagem: "2ª dose",
-        date: "16/03/2022",
-        dateNextDose: "16/02/2023"
-    },
-    {
-        id: "9",
-        title:"ABC",
-        dosagem: "2ª dose",
-        date: "16/03/2022",
-        dateNextDose: "16/02/2023"
-    },
-]
+export default function(props){
 
-export default function(){
+    const produtos = props.listItems;
+
     return(
         <View style = {styles.flatListStyle}>
             <FlatList

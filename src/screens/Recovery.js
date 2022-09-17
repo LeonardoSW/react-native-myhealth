@@ -2,7 +2,7 @@ import React from "react"
 import {StyleSheet, Text, TextInput , View, TouchableOpacity, Alert} from 'react-native'
 
 import CabecalhoComponent from '../components/CabecalhoComponent'
-import auth from '@react-native-firebase/auth';
+import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
 
 const textoCabecalho = "MyHealth";
 
@@ -22,7 +22,7 @@ function Recovery({navigation}){
             </View>
             <View style={styles.buttonArea}>
                 <TouchableOpacity 
-                onPress={RecuperarSenha}
+                onPress={() => RecuperarSenha()}
                 style={styles.button}
                 >
                     <Text style = {styles.textStyle}>Recuperar senha</Text>
@@ -38,7 +38,7 @@ function Recovery({navigation}){
             return null;
         }
 
-        auth().sendPasswordResetEmail(email)
+        auth().sendPasswordResetEmail(email, undefined)
               .then( () => {
                 alert('Email de recuperação de senha enviado para ' + email);
               })
